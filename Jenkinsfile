@@ -6,7 +6,7 @@ pipeline {
                 echo "Start.."
             }
         }
-        stage("Deploy Staging") {
+        stage("Deploy Test Envi") {
             steps {
                 build 'flask-instance-deployer'
             }
@@ -15,6 +15,12 @@ pipeline {
         stage("BVT Test") {
             steps {
                 build 'flask-bvt-test'
+            }
+        }
+
+        stage("Prod Step") {
+            steps {
+                echo "You can continue"
             }
         }
     }
